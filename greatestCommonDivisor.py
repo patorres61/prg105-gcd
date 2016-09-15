@@ -1,36 +1,35 @@
-#This program will find the greatest common divisor for two variables input by the user
+# This program will find the greatest common divisor for two variables input by the user
 
-# #define variables
-
-inpt1 = 0      # first user input variable
-inpt2 = 0      # second user input variable
-dvdnd = 0      # dividend variable
-dvsr = 0       # divisor variable
-rem = 1        # remainder variable
+# Define variables
+dividend = 0    # dividend variable
+divisor = 0     # divisor variable
+remainder = 1   # remainder variable initialized to 1 in order to check for a remainder
 
 # Instructions to the user
 print("This program will find the greatest common divisor for two variables. \n")
-inpt1 = raw_input("Enter your first variable: ")
-inpt2 = raw_input("Enter your second variable: \n")
+
+input1 = raw_input("Enter your first variable: ")
+
+input2 = raw_input("Enter your second variable: \n")
 
 # The code puts the input variables into variables used in the division statement
 # The larger of the two numbers must be the dividend
-if inpt1 > inpt2:
-    dvdnd = int(inpt1)
-    dvsr = int(inpt2)
+if input1 > input2:
+    dividend = int(input1)
+    divisor = int(input2)
 else:
-    dvdnd = int(inpt2)
-    dvsr = int(inpt1)
+    dividend = int(input2)
+    divisor = int(input1)
 
 # Begin process to examine the remainder
 # If the remainder is greater than zero, the divisor is moved to the dividend and the new dividend
 # is divided by the remainder. This process repeats until the remainder is zero. Then, the last divisor is
 # the greatest common divisor.
 
-while rem != 0:
-    rem = dvdnd % dvsr
-    if rem != 0:
-        dvdnd = dvsr
-        dvsr = rem
+while remainder != 0:
+    remainder = dividend % divisor
+    if remainder != 0:
+        dividend = divisor
+        divisor = remainder
 
-print("\nThe greatest common divisor for your variables is: " + str(dvsr))
+print("\nThe greatest common divisor for your variables is: " + str(divisor))
